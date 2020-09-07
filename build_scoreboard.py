@@ -198,13 +198,14 @@ def is_tie(cell, week):
 def week_to_espn_links(week_num):
     """Given a week number (int), returns ESPN 'Group Pick Grid' url for that week"""
     urls = []
-    base_url = "http://fantasy.espn.com/nfl-pigskin-pickem/2019/en/scoresheet?groupID=177507"
+    base_url = "http://fantasy.espn.com/nfl-pigskin-pickem/2020/en/scoresheet?groupID=177507"
 
-    # 120 is a magic number found by looking at ESPN XHR
-    # Week 1 is period 120, Week 2 is 121, etc
-    period=120+week_num-1
+    # 137 is a magic number found by looking at ESPN XHR
+    # Week 1 is period 137, Week 2 is 138, etc
+    period=137+week_num-1
     urls.append(f"{base_url}&period={period}")
-    urls.append(f"{base_url}&period={period}&objectStart=50")
+    # Uncomment this for naive pagination if we have more than 50 users
+    # urls.append(f"{base_url}&period={period}&objectStart=50")
     return urls
 
 def get_group_pick_grids(week):
