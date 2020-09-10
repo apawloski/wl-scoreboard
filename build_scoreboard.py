@@ -204,8 +204,8 @@ def week_to_espn_links(week_num):
     # Week 1 is period 137, Week 2 is 138, etc
     period=137+week_num-1
     urls.append(f"{base_url}&period={period}")
-    # Uncomment this for naive pagination if we have more than 50 users
-    # urls.append(f"{base_url}&period={period}&objectStart=50")
+    # Uncomment the line below for naive pagination if we have more than 50 users
+    urls.append(f"{base_url}&period={period}&objectStart=50")
     return urls
 
 def get_group_pick_grids(week):
