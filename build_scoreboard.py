@@ -17,6 +17,7 @@ def main():
     #
     # For ex, if Cleveland tied Pittsburgh in Week 2:
     #    ties[1] = ["CLE", "PIT"]
+    ties[2] = ["CIN", "PHI"]
     
     # This is a map of team_name -> array of week scores for that team
     # Each element in a team's array is that team's total score for that week
